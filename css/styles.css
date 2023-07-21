@@ -7,14 +7,6 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    background-image: url("../Assets/background.png");
-    background-repeat: repeat;
-    background-position: center;
-    background-size: fill;
-  
-}
 
 header{
     display: flex;
@@ -86,4 +78,20 @@ nav{
     100%{
         font-size: larger;
     }
+}
+
+.bgVid{
+    width: 100%;
+    height: 100vh;
+    background: #ccc;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.bgVideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
 }
