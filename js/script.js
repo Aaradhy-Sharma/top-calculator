@@ -17,6 +17,7 @@ let operator = '';
 function handleNumbers(num) {
     currentOperand += num;
     currentOperandTextElement.textContent = currentOperand;
+    currentOperandTextElement.style.fontSize = '2rem';
     console.log('Current Operand:', currentOperand);
 }
 
