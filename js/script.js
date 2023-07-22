@@ -3,7 +3,7 @@ numberButtons.forEach(button => {
     button.addEventListener('click', () => handleNumbers(button.textContent));
 });
 
-const operatorButtons = document.querySelectorAll('[data-operators]');
+const operatorButtons = document.querySelectorAll('[data-operations]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const clearButton = document.querySelector('[data-all-clear]');
@@ -15,10 +15,13 @@ let currentOperand = '';
 let operator = '';
 
 function handleNumbers(num) {
-    currentOperand += num;
-    currentOperandTextElement.textContent = currentOperand;
-    currentOperandTextElement.style.fontSize = '2rem';
-    console.log('Current Operand:', currentOperand);
+    if (currentOperand.length > 9) return;
+    else {
+        currentOperand += num;
+        currentOperandTextElement.textContent = currentOperand;
+        currentOperandTextElement.style.fontSize = '2rem';
+        console.log('Current Operand:', currentOperand);
+    }
 }
 
 function clear() {
@@ -27,8 +30,66 @@ function clear() {
     operator = '';
     currentOperandTextElement.textContent = '';
     previousOperandTextElement.textContent = '';
+    let outputScreen = document.querySelector('.outputScreen');
+    outputScreen.style.fontSize = '2rem';
+    outputScreen.classList.remove('result');
 }
+
+function deleteNumber() {
+    currentOperand = currentOperand.toString().slice(0, -1);
+    currentOperandTextElement.textContent = currentOperand;
+    console.log('Current Operand:', currentOperand);
+}
+
 clearButton.addEventListener('click', clear);
+deleteButton.addEventListener('click', deleteNumber);
+
+operatorButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        handleOperator(e.target.textContent);
+        currentOperandTextElement.textContent = currentOperand;
+        previousOperandTextElement.textContent = previousOperand + ' ' + operator;
+    });
+});
+
+function handleOperator(op) {
+    console.log('Operator:', op);
+    operator = op;
+    previousOperand = currentOperand;
+    currentOperand = '';
+}
+
+equalsButton.addEventListener('click', () => computeResult(previousOperand, currentOperand, operator));
+
+function computeResult(previousOperand, currentOperand, operator) {
+    let result = 0;
+    switch (operator) {
+        case '+':
+            result = parseFloat(previousOperand) + parseFloat(currentOperand);
+            break;
+        case '-':
+            result = parseFloat(previousOperand) - parseFloat(currentOperand);
+            break;
+        case 'x':
+            result = parseFloat(previousOperand) * parseFloat(currentOperand);
+            break;
+        case '÷':
+            result = parseFloat(previousOperand) / parseFloat(currentOperand);
+            break;
+        default:
+            return;
+    }
+    currentOperand = result;
+    currentOperandTextElement.textContent = currentOperand;
+    previousOperandTextElement.textContent = '';
+    console.log('Result:', result);
+    let outputScreen = document.querySelector('.outputScreen');
+    outputScreen.style.fontSize = '2rem';
+    outputScreen.classList.add('result');
+}
+
+
+
 
 
 console.log('Script Loaded Successfully');
