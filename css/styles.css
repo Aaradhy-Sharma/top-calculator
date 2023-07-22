@@ -219,18 +219,21 @@ body{
     border: 1px solid #ecf0f1;
     border-radius: 20px;
     cursor: pointer;
-    color: #ecf0f1;
     text-shadow: 0px 0px 10px #ecf0f1;
-    font-size: 19px;
+    font-size: 25px;
     transition: all 0.3s ease 0s;
-}
-
-.buttons-block button:hover{
     background-color: rgba(240, 248, 255, 0.8);
     color: #0088a9;
     box-shadow: 0px 0px 10px 0px #0088a9;
-
 }
+
+.buttons-block button:hover{
+    background-color: rgba(141, 144, 147, 0.8);
+    color: #ecf0f1;
+    box-shadow: 0px 0px 10px 0px #ecf0f1;
+}
+
+
 
 .previous-operand{
     font-size: 10px;
