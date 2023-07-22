@@ -135,7 +135,7 @@ body{
 
 .outputScreen{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     width: 397px;
@@ -189,7 +189,7 @@ body{
 
 .footer{
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -220,6 +220,8 @@ body{
     border-radius: 20px;
     cursor: pointer;
     color: #ecf0f1;
+    text-shadow: 0px 0px 10px #ecf0f1;
+    font-size: 19px;
     transition: all 0.3s ease 0s;
 }
 
@@ -230,3 +232,23 @@ body{
 
 }
 
+.previous-operand{
+    font-size: 10px;
+    color: #ecf0f1;
+    margin: 10px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: all 0.3s ease 0s;
+}
+
+.current-operand{
+    font-size: 20px;
+    color: #ecf0f1;
+    margin: 10px;
+    margin-top: 20px;
+    justify-content: flex-start; 
+    align-items: flex-start;
+
+    transition: all 0.3s ease 0s;
+}
