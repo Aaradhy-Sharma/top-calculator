@@ -103,7 +103,7 @@ body{
     height: 450px;
     width: 400px;
     border: 1px solid #ecf0f1;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 10px auto;
     background-color: rgba(10, 20, 19, 0.127);
     box-shadow: 0px 0px 24px 0px #ecf0f1;
@@ -129,6 +129,7 @@ body{
 .heading:hover{
     color: #0088a9;
     text-shadow: 0px 0px 10px #ecf0f1;
+    transform: scale(1.14);
 
 }
 
@@ -139,13 +140,16 @@ body{
     height: 80px;
     width: 397px;
     border: 1px solid #ecf0f1;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 10px auto;
     margin-top: 60px;
     background-color: rgba(10, 20, 19, 0.127);
     transition: all 0.3s ease 0s;
 }
 
+.outputScreen:hover{
+    box-shadow: 0px 0px 24px 0px #0088a9;
+}
 /* .previous-operand{
     font-size: 15px;
     color: #ecf0f1;
@@ -174,13 +178,12 @@ body{
 .buttons-block{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 11px;
     margin: 10px auto;
     margin-top: 20px;
     transition: all 0.3s ease 0s;
-    border: 1px solid red;
-    height: 400px;
-    width: 300px;
+    height: 100%;
+    width: 90%;
 }
 
 .footer{
@@ -209,3 +212,20 @@ body{
     text-shadow: 0px 0px 10px #ecf0f1;
     text-decoration: underline;
 }
+
+.buttons-block button{
+    background-color: rgba(162, 172, 180, 0);
+    border: 1px solid #ecf0f1;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ecf0f1;
+    transition: all 0.3s ease 0s;
+}
+
+.buttons-block button:hover{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+    box-shadow: 0px 0px 10px 0px #0088a9;
+
+}
+
