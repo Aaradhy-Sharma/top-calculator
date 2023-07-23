@@ -250,3 +250,10 @@ body{
 .outputScreen.result{
     box-shadow: 0px 0px 24px 0px #0088a9;
 }
+
+.btn-img{
+    height: 25px;
+    width: 25px;
+    margin: 0px;
+    transition: all 0.3s ease 0s;
+}
