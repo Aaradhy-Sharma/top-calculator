@@ -9,6 +9,7 @@ const deleteButton = document.querySelector('[data-delete]');
 const clearButton = document.querySelector('[data-all-clear]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
+const specialButtons = document.querySelectorAll('[data-special]');
 
 let previousOperand = '';
 let currentOperand = '';
@@ -91,5 +92,17 @@ function computeResult(previousOperand, currentOperand, operator) {
 
 
 
+const specialButton = document.querySelector('[data-special]');
+specialButton.addEventListener('click', handleSpecial);
+
+function handleSpecial() {
+    let textOutput = 'Made by Aaradhy Sharma';
+    let outputScreen = document.querySelector('.outputScreen');
+    currentOperandTextElement.textContent = textOutput;
+    outputScreen.style.fontSize = '1rem';
+
+    let link="https://github.com/Aaradhy-Sharma/top-calculator";
+    window.open(link, "_blank");
+}
 
 console.log('Script Loaded Successfully');
